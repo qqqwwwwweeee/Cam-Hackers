@@ -4,6 +4,12 @@
 import requests,re,os
 import time
 import sys
+import sys, traceback
+def d(msg): print(f"[DEBUG] {msg}", flush=True)
+def excepthook(typ, exc, tb):
+    print("[UNCAUGHT]", typ.__name__, exc, flush=True)
+    traceback.print_tb(tb)
+sys.excepthook = excepthook
 
 print("""
 
